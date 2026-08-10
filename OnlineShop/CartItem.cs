@@ -25,7 +25,11 @@ namespace OnlineShop
         {
             return Product.Price * Quantity;
         }
-      
+        public void ViewCartItem()
+        {
+            
+            Console.WriteLine($" Product :{Product.Name}\nPrice :{Product.Price}\nQuantity :{Quantity}\n Total Price :{GetTotal()}");
+        }
 
     }
 }

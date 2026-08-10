@@ -10,6 +10,7 @@ namespace OnlineShop
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
