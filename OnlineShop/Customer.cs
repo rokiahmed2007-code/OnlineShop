@@ -17,7 +17,23 @@ namespace OnlineShop
 
         public Customer()
         {
+            PhoneNumber = 0;
+            ID = 0;
+            Name = "Unknwon Name";
+            Address = "Unknwon Address";
+            Email = "Unknwon Email";
             Cart = new Cart();
+
+        }
+        public Customer(int PhoneNumber, int ID, string Name, string Email, string Address, Cart Cart)
+        {
+            this.PhoneNumber = PhoneNumber;
+            this.ID = ID;
+            this.Name = Name;
+            this.Email = Email;
+            this.Address = Address;
+            this.Cart = Cart;
+
         }
         public void AddToCart(Product product, int quantity)
         {

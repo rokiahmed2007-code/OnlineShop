@@ -17,10 +17,10 @@ namespace OnlineShop
         Product()
         {
             ID = 0;
-            Name = "unknown";
+            Name = "unknown Product Name";
             Price = 0.0m;
             Stock = 0;
-            Category = "unknown";
+            Category = "unknown Categroy";
         }
         Product(int ID,string Name,decimal Price) {
             this.ID = ID;
