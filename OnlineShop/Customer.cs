@@ -14,6 +14,8 @@ namespace OnlineShop
         public string Email { get; set; }
         public string Address { get; set; }
         public Cart Cart { get; set; }
+        public Order Order { get; set; }
+
 
         public Customer()
         {
@@ -23,9 +25,10 @@ namespace OnlineShop
             Address = "Unknwon Address";
             Email = "Unknwon Email";
             Cart = new Cart();
+            Order = new Order();
 
         }
-        public Customer(int PhoneNumber, int ID, string Name, string Email, string Address, Cart Cart)
+        public Customer(int PhoneNumber, int ID, string Name, string Email, string Address, Cart Cart,Order Order)
         {
             this.PhoneNumber = PhoneNumber;
             this.ID = ID;
@@ -33,6 +36,7 @@ namespace OnlineShop
             this.Email = Email;
             this.Address = Address;
             this.Cart = Cart;
+            this.Order = Order;
 
         }
         public void AddToCart(Product product, int quantity)
@@ -50,6 +54,11 @@ namespace OnlineShop
             {
                 item.ViewCartItem();
             }
+        }
+        
+        public void ViewOrder()
+        {
+            Order.DisplayOrder();
         }
     }
 }
