@@ -16,18 +16,6 @@ namespace OnlineShop
         public Cart Cart { get; set; }
         public Order Order { get; set; }
 
-
-        public Customer()
-        {
-            PhoneNumber = 0;
-            ID = 0;
-            Name = "Unknwon Name";
-            Address = "Unknwon Address";
-            Email = "Unknwon Email";
-            Cart = new Cart();
-            Order = new Order();
-
-        }
         public Customer(int PhoneNumber, int ID, string Name, string Email, string Address, Cart Cart,Order Order)
         {
             this.PhoneNumber = PhoneNumber;

@@ -25,7 +25,7 @@ namespace OnlineShop
        
         public Order( Customer Customer, List<CartItem> Items) {
 
-            OrderID = nextid;
+            OrderID = nextid++;
             this.Customer = Customer;
             this.Items = Items;
             Status = OrderStatus.Pending;

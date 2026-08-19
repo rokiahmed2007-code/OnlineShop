@@ -11,11 +11,7 @@ namespace OnlineShop
         public Product Product { get; set; }
         public int Quantity { get; set; }
 
-        public CartItem()
-        {
-            Product = null;
-            Quantity = 0;
-        }
+       
         public CartItem(Product Product,int Quantity)
         {
             this.Product = Product;

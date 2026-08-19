@@ -14,14 +14,7 @@ namespace OnlineShop
         public int Stock { get; set; }
         public string Category { get; set; }
 
-        Product()
-        {
-            ID = 0;
-            Name = "unknown Product Name";
-            Price = 0.0m;
-            Stock = 0;
-            Category = "unknown Categroy";
-        }
+       
         Product(int ID,string Name,decimal Price) {
             this.ID = ID;
             this.Name = Name;
