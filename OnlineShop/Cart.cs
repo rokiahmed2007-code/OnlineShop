@@ -41,7 +41,7 @@ namespace OnlineShop
             }
 
         }
-        public decimal CalculateTotal()
+        public decimal CalculateTotalCart()
         {
             decimal total = 0.0m;
             foreach(CartItem item in Items)

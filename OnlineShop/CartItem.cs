@@ -13,6 +13,7 @@ namespace OnlineShop
 
         public CartItem()
         {
+            Product = null;
             Quantity = 0;
         }
         public CartItem(Product Product,int Quantity)

@@ -8,24 +8,56 @@ namespace OnlineShop
 {
     internal class Order
     {
-        public int OrderID { get; set; }
+        public enum OrderStatus
+        {
+            Pending,
+            Confirmed,
+            Shipped,
+            Deliverd,
+            Cancelled
+        }
+        private static int nextid = 0;
+        public int OrderID { get;private set; }
         public Customer Customer { get; set; }
         public List<CartItem> Items { get; set; }
-        public string Status { get; set; }
+        public OrderStatus Status { get;private set; }
 
-        public Order()
-        {
-            OrderID = 0;
-            Customer = null;
-            Items = new List<CartItem>();
-            Status = "Pending";
-        }
-        public Order(int OrderID, Customer Customer, List<CartItem> Items, string Status) {
+       
+        public Order( Customer Customer, List<CartItem> Items) {
 
-            this.OrderID = OrderID;
+            OrderID = nextid;
             this.Customer = Customer;
             this.Items = Items;
-            this.Status = Status;
+            Status = OrderStatus.Pending;
+        }
+
+        public void ConfirmOrder()
+        {
+            if (Status == OrderStatus.Pending)
+            {
+                Status = OrderStatus.Confirmed;
+            }
+        }
+        public void ShipOrder()
+        {
+            if (Status == OrderStatus.Confirmed)
+            {
+                Status = OrderStatus.Shipped;
+            }
+        }
+        public void DeliverOrder()
+        {
+            if(Status== OrderStatus.Shipped)
+            {
+                Status = OrderStatus.Deliverd;
+            }
+        }
+        public void Cancelorder()
+        {
+            if (Status == OrderStatus.Pending || Status == OrderStatus.Confirmed)
+            {
+                Status = OrderStatus.Cancelled;
+            }
         }
 
         public decimal CalculateTotalOrder()
